@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Desktop Goose
+GenericName=Desktop Toy
+Comment=A Linux port of Desktop Goose (Wayland / X11)
+Exec=CppGoose %U
+Icon=cppgoose
+Type=Application
+Categories=Game;Utility;
+Terminal=false
+StartupNotify=true

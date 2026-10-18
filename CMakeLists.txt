@@ -121,6 +121,10 @@ install(DIRECTORY Assets DESTINATION "${CMAKE_INSTALL_DATADIR}/CppGoose"
     PATTERN "Header.png" EXCLUDE
     PATTERN "terminal.png" EXCLUDE
 )
+install(FILES cppgoose.desktop DESTINATION "${CMAKE_INSTALL_DATADIR}/applications")
+install(FILES cppgoose.svg DESTINATION "${CMAKE_INSTALL_DATADIR}/icons/hicolor/scalable/apps")
+install(FILES cppgoose.png DESTINATION "${CMAKE_INSTALL_DATADIR}/icons/hicolor/256x256/apps")
+
 
 if(BUILD_TESTING)
     add_executable(CppGooseCosmeticsTest
