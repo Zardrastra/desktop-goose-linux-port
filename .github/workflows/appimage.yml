@@ -25,11 +25,11 @@ jobs:
           sudo apt-get install -y \
             cmake \
             ninja-build \
+            meson \
             pkg-config \
             wayland-protocols \
             libwayland-dev \
             libgtk-4-dev \
-            libgtk4-layer-shell-dev \
             libsdl2-dev \
             libsdl2-mixer-dev \
             libgdk-pixbuf-2.0-dev \
@@ -45,6 +45,14 @@ jobs:
             patchelf \
             fuse \
             libfuse2t64
+
+      - name: Build and install gtk4-layer-shell
+        run: |
+          git clone --depth 1 https://github.com/wmww/gtk4-layer-shell.git
+          meson setup build-layer-shell gtk4-layer-shell --prefix=/usr -Dexamples=false -Ddocs=false -Dtests=false
+          ninja -C build-layer-shell
+          sudo ninja -C build-layer-shell install
+          sudo ldconfig
 
       - name: Build and run tests
         run: |
